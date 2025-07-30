@@ -12,6 +12,7 @@
 name: "CodeQL"
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
     paths:
@@ -31,8 +32,8 @@ on:
       - '!src/Jackett.Common/Models/IndexerConfig/**'
       - '!src/Jackett.IntegrationTests/**'
       - '!src/Jackett.Test/**'
-  schedule:
-    - cron: '00 00 * * 5'
+  # schedule:
+  #   - cron: '00 00 * * 5'
 
 jobs:
   analyze:
